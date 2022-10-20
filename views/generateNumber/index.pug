@@ -1,0 +1,39 @@
+script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js' type='text/javascript')
+
+input(type="text" placeholder="input your number")#value
+br
+br
+button(type="button")#segitiga generate segitiga
+button(type="button")#ganjil generate bilangan ganjil
+button(type="button")#prima generate bilangan prima
+
+script.
+  $(function(){
+    $('#value').on('keyup', function() {
+      let val = $(this).val()
+      $('#segitiga').click(() => {
+        let result = ''
+        for(let i = 0; i <= val; i++){
+          for(let x = 0; x <= i; x++){
+            //- console.log(i +' '+ x)
+            result += i + ' ' + x
+            console.log(result)
+          }
+        }
+      })
+      $('#ganjil').click(() => {
+        for(let i = 0; i <= val; i++){
+          if(i % 2 == 1) {
+            console.log(i)
+          }
+        }
+      })
+      $('#prima').click(() => {
+        for(let i = 0; i <= val; i++){
+          if(i % 2 == 0) {
+            console.log(i)
+          }
+        }
+      })
+    }) 
+  })
